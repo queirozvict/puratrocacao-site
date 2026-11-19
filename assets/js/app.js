@@ -121,6 +121,7 @@
       el.hidden = !C.preco; if (!C.preco) return;
       el.querySelector('.por').textContent = C.preco;
       const de = el.querySelector('.de'); if (C.precoDe) de.textContent = C.precoDe; else de.hidden = true;
+      const ds = el.querySelector('.desc'); if (ds) { const v = x => parseFloat(String(x).replace(/[^\d,]/g, '').replace(',', '.')); ds.hidden = !C.precoDe; if (C.precoDe) ds.textContent = '-' + Math.round(100 - 100 * v(C.preco) / v(C.precoDe)) + '%'; }
       const pa = el.querySelector('.parc'); if (C.parcelas) pa.textContent = C.parcelas; else pa.hidden = true;
     });
     document.querySelectorAll('[data-sem-preco]').forEach(el => { el.hidden = !!C.preco; });
@@ -227,3 +228,12 @@
 })();
 // segurança: se o navegador não rodar a animação de entrada (aba em segundo plano, app que trava animações), mostra tudo em 1,6 s
 setTimeout(() => document.querySelectorAll('.entra').forEach(el => { el.classList.remove('entra'); el.style.opacity = 1; el.style.transform = 'none'; }), 1600);
+
+// preço do completo no fim da página grátis (mesmo config)
+(function () {
+  const C = window.PT_CONFIG || {}, el = document.querySelector('[data-preco-home]'); if (!el || !C.preco) return;
+  const v = x => parseFloat(String(x).replace(/[^\d,]/g, '').replace(',', '.'));
+  el.hidden = false; el.querySelector('.por').textContent = C.preco;
+  const de = el.querySelector('.de'), ds = el.querySelector('.desc');
+  if (C.precoDe) { de.textContent = C.precoDe; ds.textContent = '-' + Math.round(100 - 100 * v(C.preco) / v(C.precoDe)) + '%'; } else { de.hidden = ds.hidden = true; }
+})();

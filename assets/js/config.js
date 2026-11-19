@@ -6,12 +6,12 @@ window.PT_CONFIG = {
 
   // Link do checkout (Hotmart, Kiwify...). Vazio = a página do completo vira lista de espera
   // ("Quero ser avisado"), usando o e-mail que a pessoa já deu no download.
-  checkout: '',
-  plataforma: '',            // ex.: 'Kiwify' ou 'Hotmart' (aparece em "pagamento seguro pela ...")
+  checkout: 'https://www.google.com.br/',   // PROVISÓRIO: trocar pelo link da Kiwify
+  plataforma: 'Kiwify',          // ex.: 'Kiwify' ou 'Hotmart' (aparece em "pagamento seguro pela ...")
 
   // Preço. Vazio = não mostra preço (fica "preço de lançamento para quem está na lista").
-  preco: '',                 // ex.: 'R$ 27'
-  precoDe: '',               // ex.: 'R$ 54' (riscado). Deixe vazio se não houver.
+  preco: 'R$ 16,99',                 // ex.: 'R$ 27'
+  precoDe: 'R$ 39,99',               // ex.: 'R$ 54' (riscado). Deixe vazio se não houver.
   parcelas: '',              // ex.: 'ou 3x de R$ 9,90'
 
   instagram: 'https://www.instagram.com/puratrocacao/',

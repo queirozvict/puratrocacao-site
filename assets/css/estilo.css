@@ -359,3 +359,28 @@ dialog.oferta[open] { animation: sobe .32s cubic-bezier(.2,.9,.3,1.2); }
 .heroi-img.alto video { height: 300px; }
 @media (min-width: 640px) { .heroi-img.alto video { height: 380px; } }
 @media (min-width: 980px) { .heroi-img.alto video { height: 600px; } }
+
+/* ---------- conteúdo travado na lista de treinos (só o número fica) ---------- */
+.treinos li.trava img { filter: blur(6px) brightness(.7); }
+.treinos li.trava .t, .treinos li.trava .d { filter: blur(6px); user-select: none; }
+/* ---------- aviso legal no rodapé ---------- */
+.aviso-legal { max-width: 640px; margin: 14px auto 0; font-size: 12px; line-height: 1.5; color: var(--apagado); }
+/* ---------- próximo passo (o pago) no fim do grátis ---------- */
+.proximo-passo { display: grid; gap: 28px; align-items: center; }
+.pp-capa { display: flex; justify-content: center; }
+.livro { width: 62%; max-width: 260px; border-radius: 16px; overflow: hidden; transform: rotate(-4deg); animation: flutua 4s ease-in-out infinite;
+  box-shadow: 0 0 0 1px rgba(233,185,73,.5), 0 0 40px rgba(233,185,73,.35), 0 30px 60px -20px rgba(0,0,0,.9); position: relative; }
+.livro::after { content: ''; position: absolute; top: 0; bottom: 0; left: -70%; width: 45%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); transform: skewX(-18deg); animation: brilho 3.6s ease-in-out infinite; }
+.livro.solo { margin: 0 auto 26px; }
+@keyframes flutua { 0%, 100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-2deg) translateY(-10px); } }
+.pp-lista { list-style: none; margin: 18px 0; display: grid; gap: 10px; }
+.pp-lista li { position: relative; padding-left: 22px; color: var(--cinza); }
+.pp-lista li::before { content: ''; position: absolute; left: 0; top: .55em; width: 10px; height: 10px; border-radius: 2px; background: #6BD39C; }
+.pp-preco { display: grid; grid-template-columns: auto auto; justify-content: start; align-items: center; gap: 2px 12px; margin: 6px 0 18px; }
+.pp-preco .de, [data-preco] .de { color: var(--apagado); text-decoration: line-through; font-weight: 800; font-size: 18px; grid-column: 1 / -1; }
+.pp-preco .por { font-size: 40px; font-weight: 900; line-height: 1; }
+.desc { display: inline-block; background: #6BD39C; color: #141414; font-weight: 900; font-size: 14px; padding: 4px 10px; border-radius: 20px; }
+.pp-preco small { grid-column: 1 / -1; color: var(--amarelo); font-weight: 800; letter-spacing: 2px; font-size: 12px; margin-top: 4px; }
+.linha-por { display: flex; align-items: center; justify-content: center; gap: 12px; }
+@media (min-width: 768px) { .proximo-passo { grid-template-columns: 1fr 1.3fr; } .livro { width: 80%; } }
+@media (prefers-reduced-motion: reduce) { .livro, .livro::after { animation: none; } }
