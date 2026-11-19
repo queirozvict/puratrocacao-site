@@ -190,7 +190,7 @@
   // topo em cascata
   document.querySelectorAll('.h-texto > *, .h-visual, .h-form').forEach((el, i) => { el.classList.add('entra'); el.style.setProperty('--d', (0.08 * i) + 's'); });
   // o resto aparece ao rolar
-  const alvos = document.querySelectorAll('section.sep .cabeca-secao, .treinos li, .cel, .fecho, .antes-depois .col, .formato .item, .cartao.preco, .faq details, .dias');
+  const alvos = document.querySelectorAll('section.sep .cabeca-secao, .treinos li, .cel, .fecho, .antes-depois .col, .formato .item, .res, .cartao.preco, .faq details, .dias');
   alvos.forEach(el => { el.classList.add('revela'); const irmaos = [...el.parentElement.children]; el.style.setProperty('--d', (Math.min(irmaos.indexOf(el), 6) * 0.07) + 's'); });
   if (calmo || !('IntersectionObserver' in window)) { alvos.forEach(el => el.classList.add('visto')); return; }
   const io = new IntersectionObserver(es => es.forEach(e => {
@@ -213,7 +213,7 @@
   function encherDias(el) {
     el.classList.add('anima');
     const ds = [...el.querySelectorAll('span:not(.luta)')];
-    ds.forEach((d, i) => setTimeout(() => d.classList.add('enche'), 300 + i * 220));
+    ds.forEach((d, i) => setTimeout(() => d.classList.add('enche'), 250 + i * 230));
   }
 })();
 

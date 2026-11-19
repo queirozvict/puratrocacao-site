@@ -320,3 +320,42 @@ dialog.oferta[open] { animation: sobe .32s cubic-bezier(.2,.9,.3,1.2); }
 }
 
 .heroi-img video { display: block; width: 100%; object-fit: cover; object-position: 50% 45%; animation: none; }
+
+/* ---------- completo: cartões do que a pessoa vai conseguir (v3) ---------- */
+.resultados { display: grid; gap: 12px; margin-top: 24px; }
+.res { display: grid; grid-template-columns: 104px 1fr; gap: 14px; align-items: center; padding: 10px; border-radius: 16px; background: var(--card); border: 1px solid var(--linha); transition: transform .2s, border-color .2s; }
+.res:hover { transform: translateY(-3px); border-color: var(--laranjaBorda); }
+.res img { width: 104px; height: 104px; object-fit: cover; border-radius: 12px; }
+.res h3 { font-size: 16px; color: var(--creme); letter-spacing: .8px; }
+.res p { font-size: 15px; margin-top: 4px; line-height: 1.4; }
+.formato-nota { font-size: 15px; margin-top: 18px; }
+
+/* barra dos 7 dias: trilho fino com marcos, enchendo do 1 ao 7 */
+.trilha-dias { margin-top: 28px; max-width: 720px; }
+.dias { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 0; margin: 0; padding: 0 2px; }
+.dias::before { content: ''; position: absolute; left: 18px; right: 18px; top: 50%; height: 4px; transform: translateY(-50%); border-radius: 4px; background: var(--linha); }
+.dias::after { content: ''; position: absolute; left: 18px; top: 50%; height: 4px; transform: translateY(-50%); border-radius: 4px; background: linear-gradient(90deg, var(--laranja), var(--amarelo));
+  width: 0; transition: width 1.6s cubic-bezier(.4,0,.2,1) .2s; }
+.dias.anima::after { width: calc(100% - 36px); }
+.dias span { position: relative; z-index: 1; aspect-ratio: auto; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 14px; color: var(--cinza); background: var(--bg2); border: 2px solid var(--linha); transform: none !important; }
+.dias.anima span:not(.luta) { background: var(--bg2); border-color: var(--linha); color: var(--cinza); }
+.dias.anima span.enche { background: var(--laranja); border-color: var(--laranja); color: #fff; }
+.dias span.luta { width: 46px; height: 46px; background: var(--amarelo); border-color: var(--amarelo); color: #141414; font-size: 16px; box-shadow: 0 0 0 6px rgba(255,210,63,0.18); }
+.dias-leg { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--apagado); margin-top: 10px; }
+.dias-leg strong { color: var(--cinza); }
+@media (min-width: 640px) {
+  .resultados { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .res { grid-template-columns: 1fr; padding: 0; overflow: hidden; align-items: stretch; }
+  .res img { width: 100%; height: 200px; border-radius: 0; }
+  .res > div { padding: 14px 16px 18px; }
+}
+@media (min-width: 980px) {
+  .resultados { grid-template-columns: repeat(4, 1fr); }
+  .res img { height: 220px; }
+  .dias span { width: 44px; height: 44px; font-size: 15px; }
+  .dias span.luta { width: 56px; height: 56px; font-size: 18px; }
+}
+.heroi-img.alto video { height: 300px; }
+@media (min-width: 640px) { .heroi-img.alto video { height: 380px; } }
+@media (min-width: 980px) { .heroi-img.alto video { height: 600px; } }
