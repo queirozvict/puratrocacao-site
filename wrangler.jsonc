@@ -1,0 +1,6 @@
+// Cloudflare (Workers com arquivos estáticos): publica a pasta inteira como está, sem build.
+{
+  "name": "puratrocacao-site",
+  "compatibility_date": "2025-09-01",
+  "assets": { "directory": "./" }
+}

@@ -1,0 +1,7 @@
+wrangler.jsonc
+.assetsignore
+.git
+.nojekyll
+apps-script
+LEIA-ME.md
+README.md
