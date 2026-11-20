@@ -6,7 +6,7 @@ window.PT_CONFIG = {
 
   // Link do checkout (Hotmart, Kiwify...). Vazio = a página do completo vira lista de espera
   // ("Quero ser avisado"), usando o e-mail que a pessoa já deu no download.
-  checkout: 'https://www.google.com.br/',   // PROVISÓRIO: trocar pelo link da Kiwify
+  checkout: 'https://pay.kiwify.com.br/kcSosUh',
   plataforma: 'Kiwify',          // ex.: 'Kiwify' ou 'Hotmart' (aparece em "pagamento seguro pela ...")
 
   // Preço. Vazio = não mostra preço (fica "preço de lançamento para quem está na lista").
